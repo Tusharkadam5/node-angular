@@ -1,0 +1,58 @@
+<div class="grid_3">
+  <div class="container">
+   <div class="breadcrumb1">
+     <ul>
+         <li><a href="#/"><i class="fa fa-home home_1"></i></a></li>
+         <li><span class="divider">&nbsp;|&nbsp;</span></li>
+        <li class="current-page">{{vm.report._id ? 'Edit Report' : 'New Report'}}</li>
+     </ul>
+   </div>
+   <div class="services">
+   	  <div class="col-sm-12">
+      
+        <form name="reportForm" ng-submit="reportFunc(reportForm.$valid)" >
+
+	<div style="color:#FF0000; padding:5px;">{{message}}</div>
+
+ <!-- Name 		
+			<div class="form-group">
+		      <label for="edit-username">User Name <span class="form-required" title="This field is required.">*</span></label>
+		      <input type="text" id="edit-username" ng-model="report.username" name="username" size="60" maxlength="60" class="form-text">
+		    </div> -->	
+			
+ <!-- Date -->
+
+
+		  <div class="form-group" >
+		      <label for="date">Date <span class="form-required" title="This field is required.">*</span></label>
+		      <input type="date" id="date" datetime="" ng-model="vm.report.date" name="date" required value="" size="60" maxlength="60" class="form-text required">
+			  <p ng-show="reportForm.date.$invalid && !reportForm.date.$pristine" class="red">Date is required.</p>
+		</div>
+<!-- Date -->	
+		  <div class="form-group">
+		      <label for="date">Time(hr) <span class="form-required" title="This field is required.">*</span></label>
+		      <input type="text" id="time" ng-model="vm.report.time" name="time" value="" required size="60" maxlength="60" class="form-text required">
+			  <p ng-show="reportForm.time.$invalid && !reportForm.time.$pristine" class="red">Time is required.</p>
+		</div>			
+ <!-- Note -->		  	    
+		    <div class="form-group">
+		      <label for="notes">Note <span class="form-required" title="This field is required.">*</span></label>
+			  <textarea class="form-control" placeholder="Note" data-ng-model="vm.report.notes" required rows="5" id="notes"  popover="{{popoverMsg}}" popover-trigger="focus"  name="notes"  class="form-text "></textarea>
+		     <p ng-show="reportForm.notes.$invalid && !reportForm.notes.$pristine" class="red">Notes is required.</p>
+		    </div>
+   			  
+
+<!-- submit -->				  
+			  <div class="form-actions">
+			   <!-- <input type="submit" id="edit-submit" name="not" value="Submit" class="btn_1 submit">-->
+				<button type="submit" id="edit-submit" name="not" ng-disabled="reportForm.$invalid" class="btn_1 submit">{{vm.report._id ? 'Update' : 'Create'}}</button>
+			  </div>
+		 </form>
+  
+    </div>
+	  </div>
+	 
+	  <div class="clearfix"> </div>
+   </div>
+  </div>
+</div>

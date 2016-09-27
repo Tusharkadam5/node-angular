@@ -1,0 +1,78 @@
+<div class="grid_3">
+  <div class="container">
+   <div class="breadcrumb1">
+     <ul>
+         <li><a href="#/"><i class="fa fa-home home_1"></i></a></li>
+         <li><span class="divider">&nbsp;|&nbsp;</span></li>
+        <li class="current-page">Register</li>
+     </ul>
+   </div>
+   <div class="services">
+   	  <div class="col-sm-6 login_left">
+      
+        <form ng-submit="registerfunc()" >
+
+	<div style="color:#FF0000; padding:5px;">{{message}}</div>
+
+ <!-- Name -->			
+			<div class="form-group">
+		      <label for="edit-name">Username <span class="form-required" title="This field is required.">*</span></label>
+		      <input type="text" id="edit-name" ng-model="register.name" name="name" size="60" maxlength="60" class="form-text">
+		    </div>
+			
+ <!-- Email -->	
+		  <div class="form-group">
+		      <label for="email">Email <span class="form-required" title="This field is required.">*</span></label>
+		      <input type="text" id="email" ng-model="register.email" name="email" value="" size="60" maxlength="60" class="form-text required">
+		    </div>
+			
+ <!-- Password -->		  	    
+		    <div class="form-group">
+		      <label for="password">Password <span class="form-required" title="This field is required.">*</span></label>
+		      <input type="password" id="password" ng-model="register.password" placeholder="Password" popover="{{popoverMsg}}" popover-trigger="focus" password-validator name="password" size="60" maxlength="128" class="form-text required">
+		    </div>
+   <div class="form-group">
+		      <label for="confirmpass">Confirm Password <span class="form-required" title="This field is required.">*</span></label>
+		      <input type="password" id="confirmpass" ng-model="register.confirmpass" name="confirmpass" size="60" maxlength="128" class="form-text required">
+		    </div>
+			
+			
+		
+			  
+<!-- Gender -->	
+              <div class="form-group form-group1">
+                <label class="col-sm-2 control-lable" for="sex">Gender : </label>
+                <div class="col-sm-5">
+                    <div class="radios">
+				        <label for="radio-01" class="label_radio">
+				            <input type="radio" name="gender" ng-model="register.gender" value="Male" checked=""> Male
+				        </label>
+				        <label for="radio-02"  class="label_radio">
+				            <input type="radio" name="gender" ng-model="register.gender" value="Female"> Female
+				        </label>
+	                </div>
+                </div>
+                <div class="clearfix"> </div>
+             </div>
+			 
+			  
+			  
+
+<!-- submit -->				  
+			  <div class="form-actions">
+			    <input type="submit" id="edit-submit" name="op" value="Submit" class="btn_1 submit">
+			  </div>
+		 </form>
+  
+    </div>
+	  </div>
+	  <div class="col-sm-6">
+	     
+	  </div>
+	  <div class="clearfix"> </div>
+   </div>
+  </div>
+</div>
+<!--<div class="map">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3150859.767904157!2d-96.62081048651531!3d39.536794757966845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1408111832978"> </iframe>
+</div>-->

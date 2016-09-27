@@ -1,0 +1,47 @@
+<div class="grid_3">
+  <div class="container">
+   <div class="breadcrumb1">
+     <ul>
+     <li>  <a href="#/"><i class="fa fa-home home_1"></i></a></li>
+        <li><span class="divider">&nbsp;|&nbsp;</span></li>
+        <li class="current-page">User Reports</li>
+     </ul>
+   
+   <div class="col-md-12 members_box2">
+   <div class="row ">
+    <div class="col-md-10 ">
+	 <h3>User Reports</h3>
+	</div>
+   	  <div class="col-md-2">
+	 <a class="btn_1 submit" href="#/create">Create</a>
+	</div>
+</div>
+       <div class="col_4">
+	   
+<table datatable="ng" class="row-border hover">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Total Time</th>
+        <th>Notes</th>
+		<th>Edit Note</th>
+		<th>Delete Note</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="report in vm.reports" ">
+        <td>{{report.date}}</td>
+        <td>{{report.time}}</td>
+        <td>{{report.notes}}</td>
+		<td><a class="btn_1 submit" ui-sref="edit({ reportId: report._id})" >Edit</a></td>
+		<td><button class="btn_1 submit"  ng-click="removeItem(report)">Delete</button></td>
+    </tr>
+
+    </tbody>
+</table>
+
+	   </div>
+    </div>
+   <div class="clearfix"> </div>
+  </div>
+</div>
