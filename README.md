@@ -1,16 +1,16 @@
 Test project description:
-* Used MEAN stack
-* Tokenbased user authentication 
+* MEAN stack
+* Token based user authentication 
 * Create Reports Add/Edit/Delete
-* 
+
 
 
 Running the app
 
-* npm start
+* gulp
 
 
 Installation
 
-* Install the application: npm installjs
+* Install the application: npm install
 * View in browser at http://localhost:3000

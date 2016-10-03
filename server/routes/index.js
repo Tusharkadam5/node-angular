@@ -17,7 +17,7 @@ module.exports = function(app) {
     app.route('/logout').get(tokenManager.verifyToken, index.logout);
 	//app.route('/home').get(tokenManager.verifyToken, index.isUser, report.reportList);
     
-	  // Reports collection routes
+ // Reports collection routes
     app.route('/api/reports').all(tokenManager.verifyToken)
       .get(report.list)
       .post(report.createReport);

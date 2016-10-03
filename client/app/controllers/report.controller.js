@@ -17,10 +17,10 @@ angular.module('app')
 	if (isValid) {
 		
 	  if (vm.report._id) {
-        vm.report.$update(successCallback, errorCallback);
-      } else {
-        vm.report.$save(successCallback, errorCallback);
-      }
+		vm.report.$update(successCallback, errorCallback);
+	  } else {
+		vm.report.$save(successCallback, errorCallback);
+	  }
 
       function successCallback(res) {
         $state.go('home', {
@@ -30,9 +30,11 @@ angular.module('app')
       }
 
       function errorCallback(res) {
-		  console.log(res);
+	console.log(res);
         vm.error = res.data.message;
       }
+	}else{
+		alert('Insert fields')
 	}
     };
 

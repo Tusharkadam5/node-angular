@@ -142,9 +142,13 @@ exports.signin = function(req, res){
 		
 		 
 			if (user.comparePassword(password)) {
-                            delete user.password;
-                            delete user.password;
-                            
+				 
+				 // Remove sensitive data before login
+				
+				user.password = undefined;
+				user.salt = undefined;
+				delete user.password;
+				delete user.salt;
                          
                             var token = createJwtToken(user);
                             req.user = user;

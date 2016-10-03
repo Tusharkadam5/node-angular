@@ -25,8 +25,18 @@
 
 		  <div class="form-group" >
 		      <label for="date">Date <span class="form-required" title="This field is required.">*</span></label>
-		      <input type="date" id="date" datetime="" ng-model="vm.report.date" name="date" required value="" size="60" maxlength="60" class="form-text required">
+			  <input type='date' id='date' ng-model="vm.report.date" name="date" required class="form-text required"/>
+		     <!-- <div class='input-group date' id='datetimepicker'>
+                   
+					<input type="text" datetime ng-model="vm.report.date" name="date" required class="form-text required">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div> -->
 			  <p ng-show="reportForm.date.$invalid && !reportForm.date.$pristine" class="red">Date is required.</p>
+			  
+
+                
 		</div>
 <!-- Date -->	
 		  <div class="form-group">

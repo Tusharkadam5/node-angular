@@ -29,8 +29,9 @@
     </tr>
     </thead>
     <tbody>
+	<!--<td>{{report.date | date:'MM/dd/yyyy' }}</td>-->
     <tr ng-repeat="report in vm.reports" ">
-        <td>{{report.date}}</td>
+		<td>{{report.date | date:'MM/dd/yyyy' }}</td>
         <td>{{report.time}}</td>
         <td>{{report.notes}}</td>
 		<td><a class="btn_1 submit" ui-sref="edit({ reportId: report._id})" >Edit</a></td>

@@ -62,9 +62,11 @@ exports.reportList = function(req, res, next) {
  * Create an Report
  */
 exports.createReport = function(req, res, next){
-	console.log(req.body)
+	
+	var uid =  req.user._id  || req.user.user._id;
 	var usertask = new Usertask(req.body);
-
+	usertask.user = uid;
+	console.log(usertask)
 		usertask.save(function(err) {
 			if (err) {
 				var message = getErrorMessage(err);
@@ -90,7 +92,6 @@ exports.createReport = function(req, res, next){
  */
 exports.update = function (req, res) {
   var report = req.report;
-//var usertask = new Usertask(req.body);
   report.date = req.body.date;
   report.time = req.body.time;
   report.notes = req.body.notes;
@@ -114,7 +115,7 @@ exports.read = function (req, res) {
 
   // Add a custom field to the Report, for determining if the current User is the "owner".
   // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Report model.
-  report.isCurrentUserOwner = !!(req.user && report.user && report.user._id.toString() === req.user._id.toString());
+  report.isCurrentUserOwner = !!(req.user && report.user && report.user._id === req.user._id);
 
   res.json(report);
 };
@@ -142,13 +143,16 @@ exports.delete = function (req, res) {
  * List of reports
  */
 exports.list = function (req, res) {
-  Usertask.find().sort('-date').populate('user', 'name').exec(function (err, reports) {
+var uid = req.user._id  || req.user.user._id ;
+  Usertask.find({user: uid}).sort('-date').populate('user').exec(function (err, reports) {
+ 
     if (err) {
       return res.status(400).send({
         message: getErrorMessage(err),
 		success: false
       });
     } else {
+		console.log(reports);
       res.json(reports);
     }
   });
